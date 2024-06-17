@@ -13,7 +13,7 @@ let rij4 = document.querySelector('.rij4');
 let rij5 = document.querySelector('.rij5');
 let rij6 = document.querySelector('.rij6');
 
-let random = Math.floor(Math.random() *431)
+let random = Math.floor(Math.random() *473)
 
 import jsonFile from "../json/app.json"  with { type: 'json' };;
 
@@ -50,8 +50,7 @@ $('input').on('keyup', function(e) {
           // checkt of je op enter drukt en je in het laatste element van de rij staat
         if (e.key.match('Enter'))
           { 
-            let test = "";
-          if ($(this).index() != 5 || test == "fout")
+          if ($(this).index() != 5)
           { 
             alertBox.textContent ="niet genoeg letters";
             alertBox.classList.remove("hidden");
@@ -72,11 +71,9 @@ $('input').on('keyup', function(e) {
                   setTimeout(function(){
                     alertBox.classList.add("hidden");
                   }, 3000);
-                  test = "fout"
                   return
                 }    
               input.style.backgroundColor = "red";
-              console.log(woordLetter)
               let woordCount = 0;
               while(woordCount < 6)
                 {

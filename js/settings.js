@@ -8,10 +8,6 @@ window.addEventListener("load", () => {
     }
   });
 
-  for (const el of document.querySelectorAll('.mdc-switch')) {
-    const switchControl = new MDCSwitch(el);
-  }
-
   hamburger.addEventListener('click', (event) => {
     drawer.open =true
     if (drawer.open)
