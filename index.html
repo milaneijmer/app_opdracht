@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <!-- Vereiste meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Raad het woord.">
+    <title>Woordel</title>
+
+    <!-- Material.io bestanden (CSS & Font/icons)-->
+    <!-- Uitleg werking componenents: https://material.io/components?platform=web -->
+    <!-- Demo van components:         https://material-components.github.io/material-components-web-catalog/#/ -->
+    <!-- Demo en uitleg icons:        https://fonts.google.com/icons?selected=Material+Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="manifest" href="json/manifest.json" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <style>body{margin: 0;}</style>
+    
+    <!-- Material.io bestanden (JS en registratie componenten) -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script>const MDCBanner = mdc.banner.MDCBanner;const MDCCheckbox = mdc.checkbox.MDCCheckbox;const MDCChip = mdc.chips.MDCChip;const MDCChipSet = mdc.chips.MDCChipSet;const MDCCircularProgress = mdc.circularProgress.MDCCircularProgress;const MDCDataTable = mdc.dataTable.MDCDataTable;const MDCDialog = mdc.dialog.MDCDialog;const MDCDrawer = mdc.drawer.MDCDrawer;const MDCFloatingLabel = mdc.floatingLabel.MDCFloatingLabel;const MDCFormField = mdc.formField.MDCFormField;const MDCIconButtonToggle = mdc.iconButton.MDCIconButtonToggle;const MDCLineRipple = mdc.lineRipple.MDCLineRipple;const MDCLinearProgress = mdc.linearProgress.MDCLinearProgress;const MDCList = mdc.list.MDCList;const MDCMenu = mdc.menu.MDCMenu;const MDCMenuSurface = mdc.menuSurface.MDCMenuSurface;const MDCNotchedOutline = mdc.notchedOutline.MDCNotchedOutline;const MDCRadio = mdc.radio.MDCRadio;const MDCRipple = mdc.ripple.MDCRipple;const MDCSegmentedButton = mdc.segmentedButton.MDCSegmentedButton;const MDCSelect = mdc.select.MDCSelect;const MDCSlider = mdc.slider.MDCSlider;const MDCSnackbar = mdc.snackbar.MDCSnackbar;const MDCSwitch = mdc.switchControl.MDCSwitch;const MDCTabBar = mdc.tabBar.MDCTabBar;const MDCTextField = mdc.textField.MDCTextField;const MDCTooltip = mdc.tooltip.MDCTooltip;const MDCTopAppBar = mdc.topAppBar.MDCTopAppBar;</script>
+
+</head>
+<header class="mdc-top-app-bar test">
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      <button id="hamburger" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+      <span  id="homeknop" class="mdc-top-app-bar__title">Woordel</span>
+    </section>
+  </div>
+</header>
+
+  <aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__content">
+      <img class="wordle_logo" src="images/wordle.jpg" alt="">
+      <nav class="mdc-list">
+        <a class="mdc-list-item mdc-list-item--activated" href="index.html" aria-current="page" tabindex="0">
+          <span class="mdc-list-item__ripple"></span>
+          <span class="mdc-list-item__text">Home</span>
+        </a>
+        <a class="mdc-list-item" href="6woord.html">
+          <span class="mdc-list-item__ripple"></span>
+          <span class="mdc-list-item__text">Moeilijk</span>
+        </a>
+        <a class="mdc-list-item" href="settings.html">
+          <span class="mdc-list-item__ripple"></span>
+          <span class="mdc-list-item__text">Settings</span>
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <div class="mdc-drawer-scrim"></div>
+  <main class="mdc-top-app-bar--fixed-adjust">
+    <div class="alert hidden"></div>
+    <h1 class="woordel">Woordel</h1>
+    <div class="woord rij1">
+      <input class="letter R1 L1" maxlength="1" type="text">
+      <input class="letter R1 L2" maxlength="1" type="text">
+      <input class="letter R1 L3" maxlength="1" type="text">
+      <input class="letter R1 L4" maxlength="1" type="text">
+      <input class="letter R1 L5" maxlength="1" type="text">
+    </div>
+    <div class="woord rij2">
+      <input class="letter R2 L1" maxlength="1" type="text">
+      <input class="letter R2 L2" maxlength="1" type="text">
+      <input class="letter R2 L3" maxlength="1" type="text">
+      <input class="letter R2 L4" maxlength="1" type="text">
+      <input class="letter R2 L5" maxlength="1" type="text">
+    </div>
+    <div class="woord rij3">
+      <input class="letter R3 L1" maxlength="1" type="text">
+      <input class="letter R3 L2" maxlength="1" type="text">
+      <input class="letter R3 L3" maxlength="1" type="text">
+      <input class="letter R3 L4" maxlength="1" type="text">
+      <input class="letter R3 L5" maxlength="1" type="text">
+    </div>
+    <div class="woord rij4">
+      <input class="letter R4 L1" maxlength="1" type="text"> 
+      <input class="letter R4 L2" maxlength="1" type="text">
+      <input class="letter R4 L3" maxlength="1" type="text">
+      <input class="letter R4 L4" maxlength="1" type="text">
+      <input class="letter R4 L5" maxlength="1" type="text">
+    </div>
+    <div class="woord rij5">
+      <input class="letter R5 L1" maxlength="1" type="text">
+      <input class="letter R5 L2" maxlength="1" type="text">
+      <input class="letter R5 L3" maxlength="1" type="text">
+      <input class="letter R5 L4" maxlength="1" type="text">
+      <input class="letter R5 L5" maxlength="1" type="text">
+    </div>
+      <div class="woord rij6">
+      <input class="letter R6L1" maxlength="1" type="text">
+      <input class="letter R6L2" maxlength="1" type="text">
+      <input class="letter R6L3" maxlength="1" type="text">
+      <input class="letter R6L4" maxlength="1" type="text">
+      <input class="letter R6L5" maxlength="1" type="text">
+    </div>
+  </main>
+<style>
+    .alert
+    {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 10px;
+      border-radius: 5px;
+    } 
+    .hidden
+    {
+      display: none;
+    }
+    .disabled
+    {
+      pointer-events:none;
+    }
+    body
+    {
+        background-color: #222222;
+    }
+    .mdc-top-app-bar 
+    {
+        background-color: #222430;
+    }
+     .mdc-drawer
+    {
+        background-color: #222430;
+        color: white;
+    }
+    .wordle_logo
+    {
+        height: 30%;
+        width: 100%;
+    }
+    .woordel
+    {
+        color: white;
+        font-size: 70px;
+        display: flex;
+        justify-content: center;
+    }
+    .woord
+    {
+        display: flex;
+        justify-content: center;
+    }
+    .letter
+    {  
+        height: 60px;
+        width: 60px;
+        margin: 5px;
+        background-color: gray;
+        font-size: 50px;
+        text-align: center;
+    }
+</style>
+<script src="js/jquery.js"></script>
+<script type="module" src="js/indexpage.js"></script>
+</body>
+</html>
